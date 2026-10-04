@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SortLab - Sorting Algorithm Visualizer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <h1>⚡ SortLab</h1>
+
+        <p>Interactive Sorting Algorithm Visualizer</p>
+
+    </header>
+
+
+    <!-- ================= CONTROLS ================= -->
+
+    <section class="control-panel">
+
+        <div class="input-group">
+
+            <label for="algorithm">
+                Choose Sorting Algorithm
+            </label>
+
+            <select id="algorithm">
+
+                <option value="bubble">
+                    Bubble Sort
+                </option>
+
+                <option value="insertion">
+                    Insertion Sort
+                </option>
+
+                <option value="selection">
+                    Selection Sort
+                </option>
+
+                <option value="quick">
+                    Quick Sort
+                </option>
+
+                <option value="merge">
+                    Merge Sort
+                </option>
+
+                <option value="heap">
+                    Heap Sort
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label for="numbers">
+                Enter Your Numbers
+            </label>
+
+            <input
+                type="text"
+                id="numbers"
+                value="7,4,2,1,8,3,6,5"
+                placeholder="Example: 7,4,2,1,8,3"
+            >
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="buttons">
+
+            <button id="startBtn" class="start">
+                ▶ Start
+            </button>
+
+            <button id="pauseBtn" class="pause">
+                ⏸ Pause
+            </button>
+
+            <button id="randomBtn" class="random">
+                🎲 Random
+            </button>
+
+            <button id="resetBtn" class="reset">
+                ↻ Reset
+            </button>
+
+        </div>
+
+
+        <!-- SPEED -->
+
+        <div class="speed-control">
+
+            <label for="speed">
+                ⚡ Speed
+            </label>
+
+            <input
+                type="range"
+                id="speed"
+                min="50"
+                max="800"
+                value="400"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATUS ================= -->
+
+    <section class="status-box">
+
+        <div id="status">
+            Ready — choose an algorithm and press Start.
+        </div>
+
+    </section>
+
+
+    <!-- ================= CURRENT COMPARISON ================= -->
+
+    <section class="comparison-box">
+
+        <h2>🔍 Current Comparison</h2>
+
+        <div class="comparison-display">
+
+
+            <!-- NUMBER 1 -->
+
+            <div class="compare-number">
+
+                <span id="compareIndex1">
+                    Position —
+                </span>
+
+                <strong id="compareValue1">
+                    —
+                </strong>
+
+            </div>
+
+
+            <!-- VS -->
+
+            <div class="vs">
+                VS
+            </div>
+
+
+            <!-- NUMBER 2 -->
+
+            <div class="compare-number">
+
+                <span id="compareIndex2">
+                    Position —
+                </span>
+
+                <strong id="compareValue2">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- COMPARISON RESULT -->
+
+        <div
+            id="comparisonMessage"
+            class="comparison-message"
+        >
+
+            Waiting for comparison...
+
+        </div>
+
+
+        <!-- EXPLANATION -->
+
+        <div
+            id="explanation"
+            class="explanation"
+        >
+
+            Choose an algorithm and press Start to see
+            how the numbers are compared.
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= VISUALIZER ================= -->
+
+    <section class="visualizer">
+
+        <div
+            id="bars"
+            class="bars"
+        >
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LEGEND ================= -->
+
+    <section class="legend">
+
+        <div>
+            <span class="legend-color normal"></span>
+            Normal
+        </div>
+
+        <div>
+            <span class="legend-color comparing"></span>
+            Comparing
+        </div>
+
+        <div>
+            <span class="legend-color swapping"></span>
+            Swapping
+        </div>
+
+        <div>
+            <span class="legend-color sorted"></span>
+            Sorted
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATISTICS ================= -->
+
+    <section class="statistics">
+
+        <div class="stat-card">
+
+            <span>
+                Algorithm
+            </span>
+
+            <strong id="algorithmStat">
+                Bubble Sort
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                Comparisons
+            </span>
+
+            <strong id="comparisonStat">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                Swaps / Moves
+            </span>
+
+            <strong id="swapStat">
+                0
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ALGORITHM INFORMATION ================= -->
+
+    <section class="info">
+
+        <h2>
+            📚 About This Algorithm
+        </h2>
+
+        <p id="algorithmInfo">
+
+            Bubble Sort repeatedly compares adjacent
+            elements and swaps them when they are
+            in the wrong order.
+
+        </p>
+
+    </section>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
